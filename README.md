@@ -10,6 +10,9 @@ The project employs the LGG (Low Grade Glioma) MRI Segmentation dataset, which i
 The model was trained on Kaggle platform, utilizing two GPUs for parallel processing. PyTorch, a popular deep learning framework, was used to implement the neural network architecture and training pipeline.
 
 ## Model Architecture
+
+<img src="https://github.com/rupeshghimire7/BrainMRI_TumorSegmentation/blob/main/unet.png"/>
+
 - **Downsampling Path:** The downsampling path comprises a series of convolutional layers followed by batch normalization and ReLU activation functions. Each block in this path (represented by DoubleConv modules) consists of two convolutional layers with a kernel size of (3, 3) and a stride of (1, 1), followed by batch normalization and ReLU activation. The number of channels is progressively increased from the input (3 channels) to deeper layers. Max pooling with a kernel size of (2, 2) and a stride of (2, 2) is used for downsampling, reducing the spatial dimensions while increasing the number of channels.
 
 - **Bottleneck:** The bottleneck serves as the bridge between the downsampling and upsampling paths. It consists of a DoubleConv module with a similar structure to the downsampling path but with a higher number of input channels and output channels.
